@@ -2,8 +2,7 @@
 description: Standards for naming files, variables, functions, and other code elements
 globs: 
 ---
-# Naming Conventions
-
+<?xml version="1.0" encoding="UTF-8"?>
 <rule>
   <metadata>
     <n>naming_conventions</n>

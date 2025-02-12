@@ -2,8 +2,7 @@
 description: Standards for writing and maintaining documentation
 globs: "**/*.(md|mdx|ts|tsx)"
 ---
-# Documentation Standards
-
+<?xml version="1.0" encoding="UTF-8"?>
 <rule>
   <metadata>
     <n>documentation_standards</n>

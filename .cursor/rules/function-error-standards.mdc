@@ -2,8 +2,7 @@
 description: Standards for writing functions and handling errors
 globs: "**/*.{ts,tsx}"
 ---
-# Function and Error Handling Standards
-
+<?xml version="1.0" encoding="UTF-8"?>
 <rule>
   <metadata>
     <n>function_error_standards</n>

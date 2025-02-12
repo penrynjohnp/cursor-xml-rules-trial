@@ -2,7 +2,7 @@
 description: Standards for writing and maintaining code comments and documentation
 globs: 
 ---
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>
     <rule>
         <name>code_comments</name>
