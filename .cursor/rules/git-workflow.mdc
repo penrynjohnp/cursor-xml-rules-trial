@@ -1,0 +1,66 @@
+---
+description: Standards for git commit messages and workflow practices
+globs: 
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<cursor_rules>
+    <rule>
+        <n>git_workflow</n>
+        <description>Standards for git commit messages and workflow practices</description>
+        
+        <guidelines>
+            <section name="commit_messages">
+                <title>Commit Message Format</title>
+                <guidelines>
+                    <item>Use conventional commit message format</item>
+                    <item>Write brief, descriptive commit titles</item>
+                    <item>Add two newlines after the commit title</item>
+                    <item>Include detailed explanations in commit body</item>
+                </guidelines>
+            </section>
+
+            <section name="staging">
+                <title>Staging Changes</title>
+                <guidelines>
+                    <item>Default to using `git add .` for staging all changes</item>
+                    <item>Exception: When specific file staging is explicitly required</item>
+                </guidelines>
+            </section>
+
+            <section name="push_all">
+                <title>Push All Workflow</title>
+                <description>When executing a "Push All" command:</description>
+                <steps>
+                    <item>Update story task completion status</item>
+                    <item>Document implementation notes</item>
+                    <item>Review changes via git diff</item>
+                    <item>Stage all changes</item>
+                    <item>Create descriptive commit</item>
+                    <item>Push to remote</item>
+                </steps>
+            </section>
+        </guidelines>
+
+        <examples>
+            <example type="bad">
+                <title>Bad commit message</title>
+                <code>fixed stuff</code>
+            </example>
+            <example type="good">
+                <title>Good commit message</title>
+                <code>feat(auth): implement OAuth2 login flow
+
+- Added OAuth2 client configuration
+- Implemented token refresh mechanism
+- Added user session management
+- Updated authentication middleware</code>
+                <description>Properly formatted commit message with clear title and detailed body</description>
+            </example>
+        </examples>
+
+        <metadata>
+            <priority>high</priority>
+            <version>1.0</version>
+        </metadata>
+    </rule>
+</cursor_rules> 

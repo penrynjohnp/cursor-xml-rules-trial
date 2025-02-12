@@ -1,0 +1,127 @@
+---
+description: Standards for placing and formatting Cursor rule files in the repository, including proper frontmatter structure and XML formatting
+globs: "**/*.mdc"
+---
+# Cursor Rules Location
+
+<rule>
+  <metadata>
+    <name>cursor_rules_location</name>
+    <description>Standards for placing and formatting Cursor rule files in the repository, including proper frontmatter structure and XML formatting</description>
+    <priority>high</priority>
+    <version>1.0</version>
+  </metadata>
+
+  <filters>
+    <filter>
+      <type>file_extension</type>
+      <pattern>\.mdc$</pattern>
+    </filter>
+    <filter>
+      <type>content</type>
+      <pattern>(?s)<rule>.*?</rule></pattern>
+    </filter>
+    <filter>
+      <type>event</type>
+      <pattern>file_create</pattern>
+    </filter>
+  </filters>
+
+  <actions>
+    <action>
+      <type>reject</type>
+      <conditions>
+        <condition>
+          <pattern>^(?!\.\\/\\.cursor\\/rules\\/.*\.mdc$)</pattern>
+          <message>Cursor rule files (.mdc) must be placed in the .cursor/rules directory</message>
+        </condition>
+      </conditions>
+    </action>
+
+    <action>
+      <type>suggest</type>
+      <message>
+        <![CDATA[
+When creating Cursor rules:
+
+1. Always place rule files in PROJECT_ROOT/.cursor/rules/:
+   ```
+   .cursor/rules/
+   ├── your-rule-name.mdc
+   ├── another-rule.mdc
+   └── ...
+   ```
+
+2. Follow the naming convention:
+   - Use kebab-case for filenames
+   - Always use .mdc extension
+   - Make names descriptive of the rule's purpose
+
+3. Required Frontmatter Structure:
+   ```yaml
+   ---
+   description: [MUST match the description in <metadata><description> exactly]
+   globs: [MUST specify relevant file patterns this rule applies to]
+   ---
+   ```
+   Example:
+   ```yaml
+   ---
+   description: Standards for TypeScript type safety and best practices
+   globs: "**/*.{ts,tsx}"
+   ---
+   ```
+
+4. XML Structure Requirements:
+   - Use proper XML formatting with consistent indentation
+   - Include all required sections: metadata, filters, actions, examples
+   - Metadata description must match frontmatter description
+   - Use CDATA tags for message content containing special characters
+   - Example section must demonstrate both correct and incorrect usage
+
+5. Directory structure:
+   ```
+   PROJECT_ROOT/
+   ├── .cursor/
+   │   └── rules/
+   │       ├── your-rule-name.mdc
+   │       └── ...
+   └── ...
+   ```
+
+6. Never place rule files:
+   - In the project root
+   - In subdirectories outside .cursor/rules
+   - In any other location
+        ]]>
+      </message>
+    </action>
+  </actions>
+
+  <examples>
+    <example>
+      <input>
+        <![CDATA[
+# Bad: Missing or mismatched frontmatter
+---
+description: 
+globs:
+---
+
+# Bad: Rule file in wrong location
+rules/my-rule.mdc
+my-rule.mdc
+.rules/my-rule.mdc
+
+# Good: Complete rule file with proper frontmatter and location
+---
+description: Standards for TypeScript type safety and best practices
+globs: "**/*.{ts,tsx}"
+---
+.cursor/rules/ts-type-safety.mdc
+        ]]>
+      </input>
+      <output>Correctly placed and formatted Cursor rule file with proper frontmatter</output>
+    </example>
+  </examples>
+</rule>
