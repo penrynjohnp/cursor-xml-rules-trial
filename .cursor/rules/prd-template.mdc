@@ -1,6 +1,6 @@
 ---
-description: when recording a new prd.md or updating an existing prd.md file, always follow this template
-globs: .ai/prd.md
+description: ALWAYS use when creating a new PRD or modifying an existing one to ensure consistent structure and completeness. This rule enforces standardized PRD format with all required sections and proper documentation hierarchy.
+globs: "**/*.{md,prd.md}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

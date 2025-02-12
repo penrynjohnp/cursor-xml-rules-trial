@@ -1,6 +1,6 @@
 ---
-description: File structure and code organization standards for TypeScript
-globs: *.ts, *.tsx
+description: ALWAYS use when creating new files or reorganizing existing TypeScript code to ensure proper structure. This rule enforces file organization standards, import management, and code grouping practices.
+globs: "**/*.{ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

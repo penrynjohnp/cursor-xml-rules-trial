@@ -1,6 +1,6 @@
 ---
-description: Type safety and TypeScript-specific features usage
-globs: *.ts, *.tsx
+description: ALWAYS use when writing TypeScript functions and handling data types to ensure complete type safety. This rule enforces strict typing, immutability, and proper use of TypeScript-specific features.
+globs: "**/*.{ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

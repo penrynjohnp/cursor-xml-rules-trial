@@ -1,6 +1,6 @@
 ---
-description: ALWAYS Use these rules to guide behavior and know what to do next!
-globs: 
+description: ALWAYS use when starting a new session, implementing stories, or managing PRDs to ensure proper workflow progression. This rule guides development through PRD review, story management, and implementation phases.
+globs: "**/*.{md,story.md}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

@@ -1,6 +1,6 @@
 ---
-description: Standards for writing and maintaining high-quality unit tests in typescript
-globs: *.test.ts, *.spec.ts
+description: ALWAYS use when writing or modifying unit tests to ensure comprehensive test coverage. This rule enforces test structure, proper assertions, and thorough edge case testing in TypeScript.
+globs: "**/*.{test,spec}.{ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

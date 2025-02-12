@@ -1,6 +1,6 @@
 ---
-description: Standards for managing package dependencies and imports
-globs: *.ts, *.tsx
+description: ALWAYS use when adding new imports or managing package dependencies to ensure proper dependency management. This rule enforces package installation, type definitions, and security best practices.
+globs: "**/*.{ts,tsx,js,jsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

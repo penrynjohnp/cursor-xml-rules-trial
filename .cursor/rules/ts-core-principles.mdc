@@ -1,6 +1,6 @@
 ---
-description: Core TypeScript principles and architectural guidelines
-globs: *.ts, *.tsx
+description: ALWAYS use when writing or modifying TypeScript code to ensure architectural integrity. This rule enforces core principles of clean code, proper nesting, and type safety across the codebase.
+globs: "**/*.{ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

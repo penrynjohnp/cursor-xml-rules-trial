@@ -1,6 +1,6 @@
 ---
-description: Standards for creating and using TypeScript types
-globs: *.ts, *.tsx
+description: ALWAYS use when defining or modifying TypeScript types to ensure type safety and clarity. This rule enforces standards for interfaces, type aliases, generics, and proper type documentation.
+globs: "**/*.{ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

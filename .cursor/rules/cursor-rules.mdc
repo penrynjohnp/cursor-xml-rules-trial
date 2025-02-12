@@ -57,19 +57,36 @@ globs: "**/*.mdc"
         <frontmatter>
           <required_fields>
             <field>
-              <name>description</name>
-              <requirement>Must match metadata description exactly</requirement>
+              <n>description</n>
+              <requirements>
+                <requirement>Must be optimized for AI rule selection and context efficiency</requirement>
+                <requirement>Start with action words (e.g., "ALWAYS", "NEVER", "USE") for trigger scenarios</requirement>
+                <requirement>Clearly specify when the rule should be applied</requirement>
+                <requirement>Be concise but complete (ideally 1-2 sentences)</requirement>
+                <requirement>Include key trigger words relevant to the rule's purpose</requirement>
+                <requirement>Must match metadata description exactly</requirement>
+              </requirements>
+              <pattern>ACTION_WORD when TRIGGER_SCENARIO to ensure OUTCOME. BRIEF_EXPLANATION.</pattern>
             </field>
             <field>
-              <name>globs</name>
+              <n>globs</n>
               <requirement>Must specify relevant file patterns</requirement>
             </field>
           </required_fields>
           <example>
             <content>
 ---
-description: Standards for TypeScript type safety and best practices
-globs: "**/*.{ts,tsx}"
+# Good example - Clear trigger, concise, actionable
+description: ALWAYS use when writing new components or modifying existing ones to ensure consistent styling. This rule enforces Tailwind CSS best practices for maintainable and responsive layouts.
+globs: "**/*.{tsx,jsx}"
+
+# Better than - Too vague, no clear triggers
+description: Standards for using Tailwind CSS in the project
+globs: "**/*.{tsx,jsx}"
+
+# Better than - Too verbose, dilutes key information
+description: This rule contains various standards and best practices for implementing Tailwind CSS in your components, including guidelines for responsive design, utility classes, and component organization, which should be followed when creating or updating components in the project to maintain consistency across the codebase.
+globs: "**/*.{tsx,jsx}"
 ---
             </content>
           </example>

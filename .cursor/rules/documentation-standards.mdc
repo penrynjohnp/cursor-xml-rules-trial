@@ -1,6 +1,6 @@
 ---
-description: Standards for writing and maintaining documentation
-globs: "**/*.(md|mdx|ts|tsx)"
+description: ALWAYS use when writing or updating any documentation, code comments, or JSDoc to ensure consistent, clear, and maintainable documentation. This rule enforces Google's Technical Writing Style Guide and TypeDoc standards.
+globs: "**/*.{md,mdx,ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rule>

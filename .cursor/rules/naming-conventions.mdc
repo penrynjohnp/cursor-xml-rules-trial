@@ -1,6 +1,6 @@
 ---
-description: Standards for naming files, variables, functions, and other code elements
-globs: 
+description: ALWAYS use when creating or renaming files, variables, functions, or types to ensure consistent naming patterns. This rule enforces case conventions and descriptive naming practices across the codebase.
+globs: "**/*.{ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rule>

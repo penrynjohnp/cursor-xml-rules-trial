@@ -1,6 +1,6 @@
 ---
-description: when recording a new story or updating an existing story file, always follow this template
-globs: .ai/*.story.md
+description: ALWAYS use when creating or updating story files to ensure proper tracking and implementation. This rule enforces consistent story structure with tasks, context, and progress tracking.
+globs: "**/*.story.md"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

@@ -1,6 +1,6 @@
 ---
-description: This rule ensures that Tailwind CSS is used effectively and follows best practices when creating layouts and components.
-globs: *.tsx
+description: ALWAYS use when writing or modifying UI components to ensure consistent styling and responsive design. This rule enforces Tailwind CSS best practices for maintainable and efficient layouts.
+globs: "**/*.{tsx,jsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

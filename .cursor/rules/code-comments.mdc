@@ -1,6 +1,6 @@
 ---
-description: Standards for writing and maintaining code comments and documentation
-globs: 
+description: ALWAYS use when writing or modifying code comments and documentation to ensure clarity and maintainability. This rule enforces standards for JSDoc, inline comments, and documentation best practices across the codebase.
+globs: "**/*.{ts,js,tsx,jsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <cursor_rules>

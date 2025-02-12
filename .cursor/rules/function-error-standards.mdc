@@ -1,5 +1,5 @@
 ---
-description: Standards for writing functions and handling errors
+description: ALWAYS use when writing or modifying functions to ensure proper error handling, type safety, and code organization. This rule enforces single responsibility, proper error handling, and TypeScript best practices.
 globs: "**/*.{ts,tsx}"
 ---
 <?xml version="1.0" encoding="UTF-8"?>
