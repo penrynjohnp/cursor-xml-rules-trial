@@ -2,6 +2,8 @@
 
 This repository contains a structured system for managing and implementing Cursor AI rules that enhance code quality, maintain consistency, and automate development workflows.
 
+**I Highly recommend using the [Better Updated Rule Template](https://github.com/bmadcode/cursor-auto-rules-agile-workflow) - the readme explains the differences and how to use the script to add a better format of rule generation to your project along with easily adding and maintaining optional shared notepads (and why you might want to use them instead).**
+
 ## Getting Started
 
 The easiest and recommended way to create new rules is to ask the AI to generate them. The AI understands the required structure and will automatically format the rule correctly, including all necessary sections and proper XML formatting.
