@@ -1,8 +1,6 @@
 # Cursor Rules System
 
-This repository contains a structured system for managing and implementing Cursor AI rules that enhance code quality, maintain consistency, and automate development workflows.
-
-**I Highly recommend using the [Better Updated Rule Template](https://github.com/bmadcode/cursor-auto-rules-agile-workflow) - the readme explains the differences and how to use the script to add a better format of rule generation to your project along with easily adding and maintaining optional shared notepads (and why you might want to use them instead).**
+This repository contains a base rule that will follow the cursor rules system and formatting with proper front matter, while the body using maximum XML. While this is not the most readable or easy to maintain format manually, the AI can easile add and modify rule in this format. There are some theories that the more structured XML works better in some situations, but in practice I have not found a dignificant enough difference to suggest using this, and instead would point you to what I current recommend - the [Better Updated Rule Template](https://github.com/bmadcode/cursor-auto-rules-agile-workflow) - this repo also has an extensive readme, and has recently been updated to ensure proper formatting of rules so that they do not have conflicts or disapear on generation (by specifying the proper frontmatter with no extra fields always existing).
 
 ## Getting Started
 
@@ -14,14 +12,14 @@ Here are some examples of prompts that could generate rules similar to those in 
 
 1. "Create a rule that enforces TypeScript type safety standards. It should ensure proper type definitions, prevent any usage, and maintain strict type checking across the codebase."
 
-   - This could generate something like our `ts-type-safety.mdc` rule
+   - This could generate something like our `1000-ts-type-safety.mdc` rule
 
 2. "Create a rule for Test-Driven Development workflow that guides developers through the red-green-refactor cycle. It should enforce writing tests first, then implementation."
 
-   - This could generate something like our `tdd-workflow.mdc` rule
+   - This could generate something like our `900-tdd-workflow.mdc` rule
 
 3. "Create a rule for documentation standards that follows Google's Technical Writing Style Guide. It should enforce clear, consistent documentation in JSDoc comments and markdown files."
-   - This could generate something like our `documentation-standards.mdc` rule
+   - This could generate something like our `400-documentation-standards.mdc` rule
 
 ### Why XML?
 

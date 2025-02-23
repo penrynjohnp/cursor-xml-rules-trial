@@ -1,105 +1,96 @@
 ---
 description: Use ALWAYS when asked to CREATE A RULE or UPDATE A RULE or taught a lesson from the user that should be retained as a new rule for Cursor
-globs: .cursor/rules/*.mdc
----
-# Cursor Rules Format
-## Core Structure
-
-```mdc
----
-description: ACTION when TRIGGER to OUTCOME
 globs: *.mdc
 ---
 
-# Rule Title
+<?xml version="1.0" encoding="UTF-8"?>
+<cursor-rule>
+  <title>Cursor Rules Format</title>
+  <file-organization>
+    <location>
+      <path>.cursor/rules/</path>
+      <extension>.mdc</extension>
+    </location>
+    
+    <naming-convention>
+      <pattern>PREFIX-name.mdc</pattern>
+      <prefixes>
+        <prefix code="0XX">Core standards</prefix>
+        <prefix code="1XX">Tool configs</prefix>
+        <prefix code="3XX">Testing standards</prefix>
+        <prefix code="4XX">Documentation standards</prefix>
+        <prefix code="1XXX">Language rules</prefix>
+        <prefix code="2XXX">Framework rules</prefix>
+        <prefix code="8XX">Workflows</prefix>
+        <prefix code="9XX">Templates</prefix>
+        <prefix code="__XXX_name.mdc">Private rules</prefix>
+      </prefixes>
+    </naming-convention>
 
-## Context
-- When to apply this rule
-- Prerequisites or conditions
+    <glob-patterns>
+      <pattern type="core-standards">.cursor/rules/*.mdc</pattern>
+      <pattern type="language-rules">src/**/*.{js,ts}</pattern>
+      <pattern type="testing-standards">**/*.test.{js,ts}</pattern>
+      <pattern type="react-components">src/components/**/*.tsx</pattern>
+      <pattern type="documentation">docs/**/*.md</pattern>
+      <pattern type="configuration">*.config.{js,json}</pattern>
+      <pattern type="build-artifacts">dist/**/*</pattern>
+      <pattern type="multiple-extensions">src/**/*.{js,jsx,ts,tsx}</pattern>
+      <pattern type="multiple-files">dist/**/*, docs/**/*.md</pattern>
+    </glob-patterns>
+  </file-organization>
 
-## Requirements
-- Concise, actionable items
-- Each requirement must be testable
+  <required-fields>
+    <frontmatter>
+      <field name="description">ACTION TRIGGER OUTCOME format</field>
+      <field name="globs">glob pattern for files and folders</field>
+    </frontmatter>
+    
+    <body-requirements>
+      <requirement>version tag in format X.Y.Z</requirement>
+      <requirement>context: Usage conditions</requirement>
+      <requirement>requirements: Actionable items</requirement>
+      <requirement>examples: Both valid and invalid</requirement>
+    </body-requirements>
+  </required-fields>
 
-## Examples
-<example>
-Good concise example with explanation
-</example>
+  <formatting-guidelines>
+    <guideline>Always indent content within XML or nested XML tags by 2 spaces</guideline>
+    <guideline>Keep rules as short as possible</guideline>
+    <guideline>Use Mermaid syntax if it will be shorter or clearer than describing a complex rule</guideline>
+    <guideline>Use Emojis where appropriate to convey meaning that will improve rule understanding by the AI Agent</guideline>
+    <guideline>Keep examples as short as possible to clearly convey the positive or negative example</guideline>
+  </formatting-guidelines>
 
-<example type="invalid">
-Invalid concise example with explanation
-</example>
-```
+  <ai-optimization>
+    <tips>
+      <tip>Use precise, deterministic ACTION TRIGGER OUTCOME format in description</tip>
+      <tip>Provide concise positive and negative example of rule application in practice</tip>
+      <tip>Optimize for AI context window efficiency</tip>
+      <tip>Remove any non-essential or redundant information</tip>
+      <tip>Use standard glob patterns without quotes (e.g., *.js, src/**/*.ts)</tip>
+    </tips>
 
-## File Organization
+    <context-efficiency>
+      <guideline>Keep frontmatter description under 120 characters while maintaining clear intent</guideline>
+      <guideline>Limit examples to essential patterns only</guideline>
+      <guideline>Use hierarchical structure for quick parsing</guideline>
+      <guideline>Remove redundant information across sections</guideline>
+      <guideline>Maintain high information density with minimal tokens</guideline>
+      <guideline>Focus on machine-actionable instructions over human explanations</guideline>
+    </context-efficiency>
+  </ai-optimization>
 
-### Location
-- Path: `.cursor/rules/`
-- Extension: `.mdc`
-
-### Naming Convention
-PREFIX-name.mdc where PREFIX is:
-- 0XX: Core standards
-- 1XX: Tool configs
-- 3XX: Testing standards
-- 1XXX: Language rules
-- 2XXX: Framework rules
-- 8XX: Workflows
-- 9XX: Templates
-- _name.mdc: Private rules
-
-### Glob Pattern Examples
-Common glob patterns for different rule types:
-- Core standards: .cursor/rules/*.mdc
-- Language rules: src/**/*.{js,ts}
-- Testing standards: **/*.test.{js,ts}
-- React components: src/components/**/*.tsx
-- Documentation: docs/**/*.md
-- Configuration files: *.config.{js,json}
-- Build artifacts: dist/**/*
-- Multiple extensions: src/**/*.{js,jsx,ts,tsx}
-- Multiple files: dist/**/*, docs/**/*.md
-
-## Required Fields
-
-### Frontmatter
-- description: ACTION TRIGGER OUTCOME format
-- globs: `glob pattern for files and folders`
-
-### Body
-- <version>X.Y.Z</version>
-- context: Usage conditions
-- requirements: Actionable items
-- examples: Both valid and invalid
-
-## Formatting Guidelines
-
-- Always indent content within XML or nested XML tags by 2 spaces
-- Keep rules as short as possbile
-- Use Mermaid syntax if it will be shorter or clearer than describing a complex rule
-- Use Emojis where appropriate to convey meaning that will improve rule understanding by the AI Agent
-- Keep examples as short as possible to clearly convey the positive or negative example
-
-## AI Optimization Tips
-
-1. Use precise, deterministic ACTION TRIGGER OUTCOME format in descriptions
-2. Provide concise positive and negative example of rule application in practice
-3. Optimize for AI context window efficiency
-4. Remove any non-essential or redundant information
-5. Use standard glob patterns without quotes (e.g., *.js, src/**/*.ts)
-
-## AI Context Efficiency
-
-1. Keep frontmatter description under 120 characters (or less) while maintaining clear intent for rule selection by AI AGent
-2. Limit examples to essential patterns only
-3. Use hierarchical structure for quick parsing
-4. Remove redundant information across sections
-5. Maintain high information density with minimal tokens
-6. Focus on machine-actionable instructions over human explanations
-
-<critical>
-  - NEVER include verbose explanations or redundant context that increases AI token overhead
-  - Keep file as short and to the point as possible BUT NEVER at the expense of sacrificing rule impact and usefulness for the AI Agent.
-  - the front matter can ONLY have the fields description and globs.
-</critical>
-
+  <critical-rules>
+    <rule>The front matter can ONLY have the fields description and globs</rule>
+    <rule>The file MUST start with the this exactly:
+      ---
+      description: front matter description
+      globs: front matter glob pattern or no value
+      ---
+    </rule>
+    <rule>All contents after the frontmatter will be styled as XML
+    <rule>NEVER include verbose explanations or redundant context that increases AI token overhead</rule>
+    <rule>Keep file as short and to the point as possible BUT NEVER at the expense of sacrificing rule impact and usefulness for the AI Agent</rule>
+  </critical-rules>
+</cursor-rule>
