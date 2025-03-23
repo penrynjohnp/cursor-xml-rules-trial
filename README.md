@@ -1,4 +1,6 @@
-# Cursor Rules System
+# Old XML Approach for older version of Cursor 0.3x - DO NOT USE - Full XL rule creation is UNNECESSARY, as found through extensive testing.
+
+## Deprecated - use [This Repo](https://github.com/bmadcode/cursor-auto-rules-agile-workflow) instead.
 
 This repository contains a base rule that will follow the cursor rules system and formatting with proper front matter, while the body using maximum XML. While this is not the most readable or easy to maintain format manually, the AI can easile add and modify rule in this format. There are some theories that the more structured XML works better in some situations, but in practice I have not found a dignificant enough difference to suggest using this, and instead would point you to what I current recommend - the [Better Updated Rule Template](https://github.com/bmadcode/cursor-auto-rules-agile-workflow) - this repo also has an extensive readme, and has recently been updated to ensure proper formatting of rules so that they do not have conflicts or disapear on generation (by specifying the proper frontmatter with no extra fields always existing).
 
